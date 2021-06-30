@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>练习git的使用</title>
+</head>
+
+<body>
+    <div class="wrapper" style="width: 800px; height:
+            500px;background-color: lightpink;font-size: 40px;">我会变色</div>
+    <button id="btn" style="background-color: green; border: none;outline:
+            none;border-radius: 8px;color: white;padding: 20px;font-size:
+            18px;margin-top: 20px;margin-left:200px;cursor: pointer;">点我产生框框中的文字随机变色</button>
+</body>
+<script>
+    let btn = document.getElementById('btn');
+    let div = document.getElementsByClassName('wrapper')[0];
+
+    function getRandomColor() {
+        let colorArr = [];
+        for (let i = 0; i < 3; i++) {
+            let i = Math.floor(Math.random() * 255);
+            colorArr.push(i.toString(16));
+        }
+        return '#' + colorArr.join('');
+    }
+    btn.onclick = function() {
+        let color = getRandomColor();
+        div.style.color = color;
+    }
+</script>
+
+</html>
